@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+/**
+ * UC 3 - Accept User Slot Input (1-9)
+ * This module handles reading the integer input from the player.
+ */
+public class TicTacToe {
+
+    // Scanner instance to read user input
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("--- Tic-Tac-Toe: UC3 Input Handling ---");
+        
+        // Calling the method and storing the returned value
+        int slot = getPlayerInput();
+        
+        System.out.println("Control returned to game logic. Slot selected: " + slot);
+    }
+
+    /**
+     * UC3 Method: User Input Handling
+     * Reads an integer from the console and returns it.
+     * * @return The slot number entered by the user (1-9)
+     */
+    public static int getPlayerInput() {
+        System.out.print("Enter a slot number (1-9): ");
+        
+        // Key Requirement: Read integer input
+        int slot = scanner.nextInt();
+        
+        // Key Requirement: Return the slot value
+        return slot;
+    }
+}
