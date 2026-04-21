@@ -1,0 +1,36 @@
+/**
+ * UC 4 - Convert Slot Number (1-9) to Board Index (Row, Column)
+ * Using Zero-based Indexing and Mathematical Mapping.
+ */
+public class TicTacToe {
+
+    public static void main(String[] args) {
+        // Example: User entered slot 5
+        int slot = 5;
+        
+        System.out.println("User entered slot: " + slot);
+        convertToIndices(slot);
+    }
+
+    /**
+     * UC4 Utility Method: Converts 1-9 slot to 2D array indices.
+     * Uses Division and Modulo for Mathematical Mapping.
+     */
+    public static void convertToIndices(int slot) {
+        // 1. Zero-based Indexing adjustment
+        // We subtract 1 so that slot 1-9 becomes index 0-8
+        int adjustedSlot = slot - 1;
+
+        // 2. Division for Row
+        // (index / 3) gives the row: 0, 1, or 2
+        int row = adjustedSlot / 3;
+
+        // 3. Modulo for Column
+        // (index % 3) gives the column: 0, 1, or 2
+        int col = adjustedSlot % 3;
+
+        // Key Requirement: Convert to valid indices
+        System.out.println("Mapped to Board Index: Row " + row + ", Column " + col);
+        System.out.println("Target: board[" + row + "][" + col + "]");
+    }
+}
