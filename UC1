@@ -1,0 +1,46 @@
+/**
+ * UC 1 - Display Empty Tic-Tac-Toe Board
+ * This program initializes a 3x3 board and prints it to the console.
+ */
+public class TicTacToe {
+
+    public static void main(String[] args) {
+        // 1. 2D Array (Board Representation)
+        // Think of it as a table with 3 rows and 3 columns
+        char[][] board = new char[3][3];
+
+        // 2. Initialization Logic
+        // Filling each cell with a '-' placeholder
+        initializeBoard(board);
+
+        // 3. Printing the Board
+        // Displaying the board in a readable format
+        printBoard(board);
+    }
+
+    /**
+     * Uses nested loops to set every position to empty ('-')
+     */
+    public static void initializeBoard(char[][] board) {
+        for (int i = 0; i < 3; i++) { // Outer loop handles rows
+            for (int j = 0; j < 3; j++) { // Inner loop handles columns
+                board[i][j] = '-';
+            }
+        }
+    }
+
+    /**
+     * Uses nested loops to print the board with proper spacing
+     */
+    public static void printBoard(char[][] board) {
+        System.out.println("Current Game Layout:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                // Printing the character followed by a space for readability
+                System.out.print(board[i][j] + " ");
+            }
+            // New line after each row is printed
+            System.out.println();
+        }
+    }
+}
