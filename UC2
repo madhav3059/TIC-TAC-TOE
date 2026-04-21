@@ -1,0 +1,53 @@
+import java.util.Random;
+
+/**
+ * UC 2 - Toss to Decide First Player and Symbol
+ * This program simulates a coin toss to assign symbols and determine who starts.
+ */
+public class TicTacToe {
+
+    // Game State Variables
+    static String player1Name = "Player 1";
+    static String player2Name = "Player 2";
+    static char player1Symbol;
+    static char player2Symbol;
+    static String currentPlayer;
+
+    public static void main(String[] args) {
+        System.out.println("--- Welcome to Tic-Tac-Toe ---");
+        
+        // Perform the toss logic
+        performToss();
+        
+        // Display results
+        System.out.println("\nToss Result:");
+        System.out.println(player1Name + " is assigned: " + player1Symbol);
+        System.out.println(player2Name + " is assigned: " + player2Symbol);
+        System.out.println(">> " + currentPlayer + " wins the toss and starts first!");
+    }
+
+    /**
+     * Uses Random Number Generation and Conditional Logic 
+     * to decide the first player and symbols.
+     */
+    public static void performToss() {
+        Random random = new Random();
+        
+        // 1. Random Number Generation
+        // Generates 0 or 1 (like a coin flip)
+        int toss = random.nextInt(2); 
+
+        // 2. Conditional Logic
+        if (toss == 0) {
+            // Case 0: Player 1 starts
+            player1Symbol = 'X';
+            player2Symbol = 'O';
+            currentPlayer = player1Name;
+        } else {
+            // Case 1: Player 2 starts
+            player1Symbol = 'O';
+            player2Symbol = 'X';
+            currentPlayer = player2Name;
+        }
+    }
+}
